@@ -24,7 +24,7 @@ struct BigPokemonCell: View {
                 .resizable()
                 .frame(maxWidth: 150,  maxHeight: 150)
 
-            Text(pok.pokemon.pokeName)
+            Text(pok.pokemon.name)
                 .fontWeight(.semibold)
                 .padding([.leading, .trailing, .bottom], 5)
         }
@@ -39,7 +39,7 @@ struct PokemonCell: View {
                 .resizable()
                 .frame(maxWidth: 75,  maxHeight: 75)
 
-            Text(pok.pokemon.pokeName)
+            Text(pok.pokemon.name)
                 .fontWeight(.semibold)
                 .padding([.leading, .trailing, .bottom], 5)
         }
@@ -60,9 +60,9 @@ struct PokemonHorizontalCell: View {
             VStack(alignment: .center) {
                 Text("No: \(pok.pokemon.id)")
                     .fontWeight(.bold)
-                Text(pok.pokemon.pokeName)
+                Text(pok.pokemon.name)
                     .fontWeight(.semibold)
-                Text("Type: \(pok.pokemon.typeString)")
+//                Text("Type: \(pok.pokemon.typeString)")
             }
         }
         .frame(width: 300)
@@ -77,7 +77,7 @@ struct PokemonSmallHorizontalCell: View {
                 .resizable()
                 .frame(maxWidth: 75,  maxHeight: 75)
             VStack {
-                Text(pok.pokemon.pokeName)
+                Text(pok.pokemon.name)
                     .fontWeight(.semibold)
             }
         }.padding(.trailing, 10)

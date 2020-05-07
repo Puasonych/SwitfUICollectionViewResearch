@@ -10,6 +10,37 @@ import Foundation
 import SwiftUI
 import Combine
 
+struct PokemonInfo: Codable {
+    let name: String
+    let url: String
+}
+
+struct PokemonSprites: Codable {
+    enum CodingKeys: String, CodingKey {
+        case frontDefault = "front_default"
+    }
+    let frontDefault: String
+}
+
+struct Pokemon: Codable {
+    let id: Int
+    let name: String
+    let sprites: PokemonSprites
+}
+
+struct PokemonImage: Identifiable {
+  var id: Int {
+    pokemon.id
+  }
+  var pokemon: Pokemon
+  var image: UIImage
+}
+
+struct PokemonAPIList: Codable {
+    let results: [PokemonInfo]
+}
+
+
 class NetworkingManager: ObservableObject {
     var pokemonAPIList = PokemonAPIList(results: [])
     private let userDefaults = UserDefaults.standard
